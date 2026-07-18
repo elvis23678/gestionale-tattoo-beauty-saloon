@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: gestionale-tattoo-beauty-saloon
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_USER
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gestionale-tbs-db
+          property: connectionString
+databases:
+  - name: gestionale-tbs-db
+    plan: free
+    databaseName: gestionale_tbs
+    user: gestionale_tbs
