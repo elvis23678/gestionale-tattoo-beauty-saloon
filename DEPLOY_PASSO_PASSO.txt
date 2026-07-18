@@ -1,0 +1,7 @@
+1. Carica TUTTI i file e le cartelle di questa cartella nel repository GitHub privato.
+2. Su Render scegli New > Blueprint.
+3. Collega il repository gestionale-tattoo-beauty-saloon.
+4. Render leggerà automaticamente render.yaml e creerà Web Service + PostgreSQL.
+5. Quando richiesto, imposta ADMIN_PASSWORD con una password forte.
+6. Avvia il deploy.
+7. Apri l'indirizzo onrender.com e accedi con ADMIN_USER=admin e la password scelta.
